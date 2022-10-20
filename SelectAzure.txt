@@ -1,0 +1,8 @@
+select [dbo].[estacao].idEstacao, [dbo].[estacao].nomeEstacao, 
+[dbo].[totem].idTotem, [dbo].[totem].marca, [dbo].[totem].so, 
+[dbo].[dado].memoriaUso, [dbo].[dado].memoriaDisponivel, 
+[dbo].[dado].processadorUso, [dbo].[dado].temperatura, 
+[dbo].[dado].data_dado from [dbo].[estacao]
+ join
+ [dbo].[totem] on [dbo].[totem].fkEstacao = [dbo].[estacao].idEstacao
+ join [dbo].[dado] on [dbo].[dado].fkTotem = [dbo].[totem].idTotem;
